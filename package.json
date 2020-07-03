@@ -1,0 +1,22 @@
+{
+  "name": "frontend-project-lvl1",
+  "version": "1.0.0",
+  "description": "start project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlekseyShlapakov/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "key"
+  ],
+  "author": "Alexey Shlapakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlekseyShlapakov/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/AlekseyShlapakov/frontend-project-lvl1#readme"
+}
