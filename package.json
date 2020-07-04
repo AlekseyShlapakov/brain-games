@@ -6,6 +6,10 @@
   "scripts": {
     "test": "test"
   },
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlekseyShlapakov/frontend-project-lvl1.git"
