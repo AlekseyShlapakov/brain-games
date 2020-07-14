@@ -32,7 +32,9 @@ const calculateGame = () => {
   for (let i = 0; i < arr.length;) {
     const num1 = Math.floor(Math.random() * 21);
     const num2 = Math.floor(Math.random() * 21);
-    const userAnswer = readlineSync.question(`Question: ${num1} ${arr[i]} ${num2}\nYour answer: `);
+    const userAnswer =
+    readlineSync.question(`Question: ${num1} ${arr[i]} ${num2}
+  Your answer: `);
     if (numbersCalc(arr[i], num1, num2) === parseInt(userAnswer)) {
       console.log('Correct!');
       i += 1;

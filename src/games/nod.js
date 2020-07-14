@@ -33,8 +33,9 @@ const nodGame = () => {
   for (let i = 0; i < 3;) {
     const num1 = Math.floor(Math.random() * 21);
     const num2 = Math.floor(Math.random() * 21);
-    const arr = [num1, num2];
-    const userAnswer = readlineSync.question(`Question: ${num1} ${num2}\nYour answer: `);
+    const arr = [num1, num2, num1];
+    const userAnswer =
+    readlineSync.question(`Question: ${num1} ${num2}\nYour answer: `);
     if (calcNod(num1, num2) === parseInt(userAnswer)) {
       console.log('Correct!');
       i += 1;

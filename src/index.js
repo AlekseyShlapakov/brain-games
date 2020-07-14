@@ -8,7 +8,8 @@ const engineGame = (question, arr, someFunc, n1, n2) => {
   console.log(question);
 
   for (let i = 0; i < arr.length;) {
-    const userAnswer = readlineSync.question(`Question: ${n1} ${arr[i]} ${n2}\nYour answer: `);
+    const userAnswer =
+    readlineSync.question(`Question: ${n1} ${arr[i]} ${n2}\nYour answer: `);
 
     if (someFunc(arr[i]) === userAnswer) {
       console.log('Correct!');

@@ -31,13 +31,14 @@ const isNumberEven = () => {
 
 //   const arr = [num1, num2, num3];
 //   for (let i = 0; i < arr.length;) {
-//     const userAnswer = readlineSync.question(`Question: ${arr[i]}\nYour answer: `);
+//     const userAnswer =
+//   readlineSync.question(`Question: ${arr[i]}\nYour answer: `);
 
 //     if (isUserAnswer(arr[i]) === userAnswer) {
 //       console.log('Correct!');
 //       i += 1;
 //     } else {
-//       console.log(`${userAnswer} is wrong answer ;(. Correct answer was 
+//       console.log(`${userAnswer} is wrong answer ;(. Correct answer was
 //                    ${isUserAnswer(arr[i])}. Let's try again, ${userName}!`);
 //     }
 //   };
