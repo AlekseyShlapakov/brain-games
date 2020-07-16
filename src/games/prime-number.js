@@ -2,18 +2,24 @@ import readlineSync from 'readline-sync';
 import * as engine from './../index.js';
 
 const correctAnswer = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      return 'no';
+    }
   }
-  return 'no';
+  if (number < 2) {
+    return 'no';
+  }
+  return 'yes';
 };
 
-const evenParityGame = () => {
+const primeNumberGame = () => {
   engine.greeting();
   const userName = readlineSync.question('May I have your name? ');
   engine.greetingUserName(userName);
 
-  const question = 'Answer "yes" if the number is even, otherwise answer "no".';
+  const question =
+  'Answer "yes" if given number is prime. Otherwise answer "no"';
   engine.questionFunc(question);
 
   for (let i = 0; i < 3;) {
@@ -35,32 +41,33 @@ const evenParityGame = () => {
   };
 };
 
-// const isNumberEven = () => {
+// const primeNumberGame = () => {
 //   console.log('Welcome to the Brain Games!');
 //   const userName = readlineSync.question('May I have your name? ');
 //   console.log(`Hello, ${userName}!`);
 
-//   console.log('Answer "yes" if the number is even, otherwise answer "no".');
+//   console.log
+//   ('Answer "yes" if given number is prime. Otherwise answer "no"');
+
 
 //   for (let i = 0; i < 3;) {
-//   const num = Math.floor(Math.random() * 21);
+//     const num = Math.floor(Math.random() * 21);
 //     const userAnswer =
 //   readlineSync.question(`Question: ${num}\nYour answer: `);
 
-//     if (isUserAnswer(num) === userAnswer) {
+//     if (correctAnswer(num) === userAnswer) {
 //       console.log('Correct!');
 //       i += 1;
-//     if (i >= 3) {
-//       console.log(`Congratulations, ${userName}!`);
-//     }
+
+//       if (i >= 3) {
+//         console.log(`Congratulations, ${userName}!`);
+//       }
 //     } else {
 //       console.log(`${userAnswer} is wrong answer ;(. Correct answer was
-//                    ${isUserAnswer(num)}. Let's try again, ${userName}!`);
+//                    ${correctAnswer(num)}. Let's try again, ${userName}!`);
 //       break;
 //     }
 //   };
 // };
 
-// export default isNumberEven;
-
-export default evenParityGame;
+export default primeNumberGame;

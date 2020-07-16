@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-// import engineGame from './../index.js';
+import * as engine from './../index.js';
 
 const calcProgression = (num1, num2) => {
   const progression = [num2];
@@ -21,8 +21,8 @@ const correctAnswer = (num1, num2) => {
       array[0] !== '..' &&
       array[array.length - 1] !== '..'
     ) {
-      const elemOfProgression = (Number(array[i - 1]) +
-        Number(array[i + 1])) / 2;
+      const elemOfProgression = (parseInt(array[i - 1]) +
+        parseInt(array[i + 1])) / 2;
       return elemOfProgression;
     } else if (array[0] === '..') {
       const elemOfProgression =
@@ -38,32 +38,60 @@ const correctAnswer = (num1, num2) => {
 };
 
 const progressionGame = () => {
-  console.log('Welcome to the Brain Games!');
-
+  engine.greeting();
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  engine.greetingUserName(userName);
 
-  console.log('What number is missing in the progression?');
+  const question = 'What number is missing in the progression?';
+  engine.questionFunc(question);
 
-  for (let i = 0; i < 3; ) {
+  for (let i = 0; i < 3;) {
     const num1 = Math.floor(Math.random() * 10);
     const num2 = Math.floor(Math.random() * 101);
-    const arr = [num1, num2, num1];
     const userAnswer =
-    readlineSync.question(`Question: ${calcProgression(num1, num2)}
+  readlineSync.question(`Question: ${calcProgression(num1, num2)}
 Your answer: `);
+
     if (correctAnswer(num1, num2) === parseInt(userAnswer)) {
-      console.log('Correct!');
+      engine.correct();
       i += 1;
-      if (i >= arr.length) {
-        console.log(`Congratulations, ${userName}!`);
+
+      if (i >= 3) {
+        engine.congratulation(userName);
       }
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was
-        ${correctAnswer(num1, num2)}. Let's try again, ${userName}!`);
+      engine.ifWrongAnswer(correctAnswer(num1, num2), userName, userAnswer);
       break;
     }
-  }
+  };
 };
+
+// const progressionGame = () => {
+//   console.log('Welcome to the Brain Games!');
+
+//   const userName = readlineSync.question('May I have your name? ');
+//   console.log(`Hello, ${userName}!`);
+
+//   console.log('What number is missing in the progression?');
+
+//   for (let i = 0; i < 3; ) {
+//     const num1 = Math.floor(Math.random() * 10);
+//     const num2 = Math.floor(Math.random() * 101);
+//     const userAnswer =
+//     readlineSync.question(`Question: ${calcProgression(num1, num2)}
+// Your answer: `);
+//     if (correctAnswer(num1, num2) === parseInt(userAnswer)) {
+//       console.log('Correct!');
+//       i += 1;
+//       if (i >= 3) {
+//         console.log(`Congratulations, ${userName}!`);
+//       }
+//     } else {
+//       console.log(`${userAnswer} is wrong answer ;(. Correct answer was
+//         ${correctAnswer(num1, num2)}. Let's try again, ${userName}!`);
+//       break;
+//     }
+//   }
+// };
 
 export default progressionGame;
