@@ -1,19 +1,18 @@
-import readlineSync from 'readline-sync';
-import * as engine from './../index.js';
+import engineGame from './../index.js';
 
-const calcProgression = (num1, num2) => {
-  const progression = [num2];
+const calcProgression = (difference, number) => {
+  const progression = [number];
   for (let i = 0; i < 9; i += 1) {
     if (progression[0]) {
-      progression.push(progression[i] + num1);
+      progression.push(progression[i] + difference);
     }
   }
-  progression.splice(num1, 1, '..');
+  progression.splice(difference, 1, '..');
   return progression.join(' ');
 };
 
-const correctAnswer = (num1, num2) => {
-  const progression = calcProgression(num1, num2);
+const finfElemOfProgression = (difference, number) => {
+  const progression = calcProgression(difference, number);
   const array = progression.split(' ');
   for (let i = 0; i < array.length; i += 1) {
     if (
@@ -37,61 +36,19 @@ const correctAnswer = (num1, num2) => {
   }
 };
 
-const progressionGame = () => {
-  engine.greeting();
-  const userName = readlineSync.question('May I have your name? ');
-  engine.greetingUserName(userName);
+const gameTask = 'What number is missing in the progression?';
 
-  const question = 'What number is missing in the progression?';
-  engine.questionFunc(question);
-
-  for (let i = 0; i < 3;) {
-    const num1 = Math.floor(Math.random() * 10);
-    const num2 = Math.floor(Math.random() * 101);
-    const userAnswer =
-  readlineSync.question(`Question: ${calcProgression(num1, num2)}
-Your answer: `);
-
-    if (correctAnswer(num1, num2) === parseInt(userAnswer)) {
-      engine.correct();
-      i += 1;
-
-      if (i >= 3) {
-        engine.congratulation(userName);
-      }
-    } else {
-      engine.ifWrongAnswer(correctAnswer(num1, num2), userName, userAnswer);
-      break;
-    }
-  };
+const generateParams = () => {
+  const stepOfProgression = Math.floor(Math.random() * 10);
+  const numberOfProgression = Math.floor(Math.random() * 101);
+  const correctAnswer =
+  finfElemOfProgression(stepOfProgression, numberOfProgression).toString();
+  const question = calcProgression(stepOfProgression, numberOfProgression);
+  return [question, correctAnswer];
 };
 
-// const progressionGame = () => {
-//   console.log('Welcome to the Brain Games!');
-
-//   const userName = readlineSync.question('May I have your name? ');
-//   console.log(`Hello, ${userName}!`);
-
-//   console.log('What number is missing in the progression?');
-
-//   for (let i = 0; i < 3; ) {
-//     const num1 = Math.floor(Math.random() * 10);
-//     const num2 = Math.floor(Math.random() * 101);
-//     const userAnswer =
-//     readlineSync.question(`Question: ${calcProgression(num1, num2)}
-// Your answer: `);
-//     if (correctAnswer(num1, num2) === parseInt(userAnswer)) {
-//       console.log('Correct!');
-//       i += 1;
-//       if (i >= 3) {
-//         console.log(`Congratulations, ${userName}!`);
-//       }
-//     } else {
-//       console.log(`${userAnswer} is wrong answer ;(. Correct answer was
-//         ${correctAnswer(num1, num2)}. Let's try again, ${userName}!`);
-//       break;
-//     }
-//   }
-// };
+const progressionGame = () => engineGame(gameTask, generateParams);
 
 export default progressionGame;
+
+

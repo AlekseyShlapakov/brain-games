@@ -1,7 +1,6 @@
-import readlineSync from 'readline-sync';
-import * as engine from './../index.js';
+import engineGame from './../index.js';
 
-const correctAnswer = (item, num1, num2) => {
+const generateCalculation = (item, num1, num2) => {
   if (item === '+') {
     return num1 + num2;
   } else if (item === '-') {
@@ -11,36 +10,27 @@ const correctAnswer = (item, num1, num2) => {
   }
 };
 
-const calculateGame = () => {
-  engine.greeting();
-  const userName = readlineSync.question('May I have your name? ');
-  engine.greetingUserName(userName);
+const gameTask = 'What is the result of the expression?';
 
-  const question = 'What is the result of the expression?';
-  engine.questionFunc(question);
+const methodsOfCalculation = ['+', '-', '*'];
 
-  const arr = ['+', '-', '*'];
-  for (let i = 0; i < 3;) {
-    const num1 = Math.floor(Math.random() * 21);
-    const num2 = Math.floor(Math.random() * 21);
-    const userAnswer =
-  readlineSync.question(`Question: ${num1} ${arr[i]} ${num2}\nYour answer: `);
-
-    if (correctAnswer(arr[i], num1, num2) === parseInt(userAnswer)) {
-      engine.correct();
-      i += 1;
-
-      if (i >= 3) {
-        engine.congratulation(userName);
-      }
-    } else {
-      engine.ifWrongAnswer(correctAnswer(arr[i], num1, num2),
-          userName, userAnswer);
-      break;
-    }
-  };
+const generateParams = () => {
+  const numForQuestionOne = Math.floor(Math.random() * 21);
+  const numForQuestionTwo = Math.floor(Math.random() * 21);
+  const methodsOfCalculationIndex =
+  Math.floor(Math.random() * methodsOfCalculation.length);
+  const correctAnswer =
+  generateCalculation(methodsOfCalculation[methodsOfCalculationIndex],
+      numForQuestionOne, numForQuestionTwo).toString();
+  const question =
+  `${numForQuestionOne} ${methodsOfCalculation[methodsOfCalculationIndex]} 
+  ${numForQuestionTwo}`;
+  return [question, correctAnswer];
 };
 
+const calculateGame = () => engineGame(gameTask, generateParams);
+
+export default calculateGame;
 
 // const calculateGame = () => {
 //   console.log('Welcome to the Brain Games!');
@@ -70,5 +60,3 @@ const calculateGame = () => {
 //     }
 //   };
 // };
-
-export default calculateGame;

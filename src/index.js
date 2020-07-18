@@ -1,26 +1,31 @@
-export const greeting = () => {
+import readlineSync from 'readline-sync';
+
+const numberOfRounds = 3;
+
+const engineGame = (gameTask, generateParams) => {
   console.log('Welcome to the Brain Games!');
-};
-
-export const greetingUserName = (userName) => {
+  const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
+
+  console.log(gameTask);
+
+  for (let i = 0; i < numberOfRounds;) {
+    const [question, correctAnswer] = generateParams();
+    const userAnswer =
+  readlineSync.question(`Question: ${question}\nYour answer: `);
+
+    if (correctAnswer === userAnswer) {
+      console.log('Correct!');
+      i += 1;
+      if (i >= 3) {
+        console.log(`Congratulations, ${userName}!`);
+      }
+    } else {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was
+                   ${correctAnswer}. Let's try again, ${userName}!`);
+      break;
+    }
+  };
 };
 
-export const questionFunc = (question) => {
-  console.log(question);
-};
-
-export const correct = () => {
-  console.log('Correct!');
-};
-
-export const congratulation = (userName) => {
-  console.log(`Congratulations, ${userName}!`);
-};
-
-export const ifWrongAnswer = (corAnswerFunc, userName, userAnswer) => {
-  console.log(`${userAnswer} is wrong answer ;(. Correct answer was
-                 ${corAnswerFunc}. Let's try again, ${userName}!`);
-};
-
-
+export default engineGame;

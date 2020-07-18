@@ -1,39 +1,25 @@
-import readlineSync from 'readline-sync';
-import * as engine from './../index.js';
+import engineGame from './../index.js';
 
-const correctAnswer = (number) => {
+const isNumberEven = (number) => {
   if (number % 2 === 0) {
     return 'yes';
   }
   return 'no';
 };
 
-const evenParityGame = () => {
-  engine.greeting();
-  const userName = readlineSync.question('May I have your name? ');
-  engine.greetingUserName(userName);
+const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  const question = 'Answer "yes" if the number is even, otherwise answer "no".';
-  engine.questionFunc(question);
-
-  for (let i = 0; i < 3;) {
-    const num = Math.floor(Math.random() * 21);
-    const userAnswer =
-  readlineSync.question(`Question: ${num}\nYour answer: `);
-
-    if (correctAnswer(num) === userAnswer) {
-      engine.correct();
-      i += 1;
-
-      if (i >= 3) {
-        engine.congratulation(userName);
-      }
-    } else {
-      engine.ifWrongAnswer(correctAnswer(num), userName, userAnswer);
-      break;
-    }
-  };
+const generateParams = () => {
+  const numForQuestion = Math.floor(Math.random() * 21);
+  const correctAnswer = isNumberEven(numForQuestion);
+  const question = numForQuestion;
+  return [question, correctAnswer];
 };
+
+const evenParityGame = () => engineGame(gameTask, generateParams);
+
+export default evenParityGame;
+
 
 // const isNumberEven = () => {
 //   console.log('Welcome to the Brain Games!');
@@ -62,5 +48,3 @@ const evenParityGame = () => {
 // };
 
 // export default isNumberEven;
-
-export default evenParityGame;
