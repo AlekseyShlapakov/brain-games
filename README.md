@@ -24,12 +24,23 @@
 
 ![CI](https://github.com/AlekseyShlapakov/frontend-project-lvl1/workflows/Node%20CI/badge.svg)<br><br>
 
-[![asciicast](https://asciinema.org/a/B30dnwtf0dtrEU1MePsKrkxPB.svg)](https://asciinema.org/a/B30dnwtf0dtrEU1MePsKrkxPB)
+# "Is Even?" Game
 
-[![asciicast](https://asciinema.org/a/q2qGiGOZ9LijmS0DvuiphWhNX.svg)](https://asciinema.org/a/q2qGiGOZ9LijmS0DvuiphWhNX)
+[![asciicast](https://asciinema.org/a/B30dnwtf0dtrEU1MePsKrkxPB.svg)](https://asciinema.org/a/B30dnwtf0dtrEU1MePsKrkxPB)<br>
 
-[![asciicast](https://asciinema.org/a/ESdQeB20WQba9h8mhmlPLnup3.svg)](https://asciinema.org/a/ESdQeB20WQba9h8mhmlPLnup3)
+# "Calculator" Game
 
-[![asciicast](https://asciinema.org/a/CjfqDl5EvfGe3YYHGfA71wBOc.svg)](https://asciinema.org/a/CjfqDl5EvfGe3YYHGfA71wBOc)
+[![asciicast](https://asciinema.org/a/q2qGiGOZ9LijmS0DvuiphWhNX.svg)](https://asciinema.org/a/q2qGiGOZ9LijmS0DvuiphWhNX)<br>
 
-[![asciicast](https://asciinema.org/a/e7fzQjfUCi5FVkTaaoaGTiPbK.svg)](https://asciinema.org/a/e7fzQjfUCi5FVkTaaoaGTiPbK)
+# "Greatest Common Divisor" Game
+
+[![asciicast](https://asciinema.org/a/ESdQeB20WQba9h8mhmlPLnup3.svg)](https://asciinema.org/a/ESdQeB20WQba9h8mhmlPLnup3)<br>
+
+# "Arithmetic Progression" Game
+
+[![asciicast](https://asciinema.org/a/CjfqDl5EvfGe3YYHGfA71wBOc.svg)](https://asciinema.org/a/CjfqDl5EvfGe3YYHGfA71wBOc)<br>
+
+# "Is Prime?" Game
+
+[![asciicast](https://asciinema.org/a/e7fzQjfUCi5FVkTaaoaGTiPbK.svg)](https://asciinema.org/a/e7fzQjfUCi5FVkTaaoaGTiPbK)<br>
+
