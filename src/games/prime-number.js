@@ -1,4 +1,4 @@
-import engineGame from './../index.js';
+import gameEngine from './../index.js';
 
 const isNumberPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
@@ -21,7 +21,7 @@ const generateParams = () => {
   return [question, correctAnswer];
 };
 
-const primeNumberGame = () => engineGame(gameTask, generateParams);
+const primeNumberGame = () => gameEngine(gameTask, generateParams);
 
 export default primeNumberGame;
 

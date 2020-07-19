@@ -1,4 +1,4 @@
-import engineGame from './../index.js';
+import gameEngine from './../index.js';
 
 const generateNod = (num1, num2) => {
   while (num1 != 0 && num2 != 0) {
@@ -22,6 +22,6 @@ const generateParams = () => {
   return [question, correctAnswer];
 };
 
-const nodGame = () => engineGame(gameTask, generateParams);
+const nodGame = () => gameEngine(gameTask, generateParams);
 
 export default nodGame;

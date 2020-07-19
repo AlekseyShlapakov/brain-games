@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const numberOfRounds = 3;
 
-const engineGame = (gameTask, generateParams) => {
+const gameEngine = (gameTask, generateParams) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -17,7 +17,7 @@ const engineGame = (gameTask, generateParams) => {
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
       i += 1;
-      if (i >= 3) {
+      if (i >= numberOfRounds) {
         console.log(`Congratulations, ${userName}!`);
       }
     } else {
@@ -28,4 +28,4 @@ const engineGame = (gameTask, generateParams) => {
   };
 };
 
-export default engineGame;
+export default gameEngine;

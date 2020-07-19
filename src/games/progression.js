@@ -1,4 +1,4 @@
-import engineGame from './../index.js';
+import gameEngine from './../index.js';
 
 const calcProgression = (difference, number) => {
   const progression = [number];
@@ -47,7 +47,7 @@ const generateParams = () => {
   return [question, correctAnswer];
 };
 
-const progressionGame = () => engineGame(gameTask, generateParams);
+const progressionGame = () => gameEngine(gameTask, generateParams);
 
 export default progressionGame;
 
