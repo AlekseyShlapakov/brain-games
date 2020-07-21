@@ -1,4 +1,5 @@
 import gameEngine from './../index.js';
+import {generateRandomNum} from './../index.js';
 
 const generateNod = (num1, num2) => {
   while (num1 !== num2) {
@@ -14,8 +15,8 @@ const generateNod = (num1, num2) => {
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const generateParams = () => {
-  const numForQuestionOne = Math.floor(Math.random() * 21);
-  const numForQuestionTwo = Math.floor(Math.random() * 21);
+  const numForQuestionOne = generateRandomNum(21);
+  const numForQuestionTwo = generateRandomNum(21);
   const correctAnswer =
   generateNod(numForQuestionOne, numForQuestionTwo).toString();
   const question = `${numForQuestionOne} ${numForQuestionTwo}`;

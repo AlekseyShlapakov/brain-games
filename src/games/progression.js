@@ -1,4 +1,5 @@
 import gameEngine from './../index.js';
+import {generateRandomNum} from './../index.js';
 
 const calcProgression = (stepOfProgression, unknownElem, number) => {
   const progression = [number];
@@ -39,9 +40,9 @@ const findElemOfProgression = (stepOfProgression, unknownElem, number) => {
 const gameTask = 'What number is missing in the progression?';
 
 const generateParams = () => {
-  const stepOfProgression = Math.floor(Math.random() * 10);
-  const unknownElemOfProgression = Math.floor(Math.random() * 10);
-  const numberOfProgression = Math.floor(Math.random() * 101);
+  const stepOfProgression = generateRandomNum(10);
+  const unknownElemOfProgression = generateRandomNum(10);
+  const numberOfProgression = generateRandomNum(101);
   const correctAnswer =
   findElemOfProgression(stepOfProgression, unknownElemOfProgression,
       numberOfProgression).toString();
