@@ -17,13 +17,13 @@ const gameEngine = (gameTask, generateParams) => {
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
       i += 1;
-      if (i >= numberOfRounds) {
-        console.log(`Congratulations, ${userName}!`);
-      }
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was
-                   ${correctAnswer}. Let's try again, ${userName}!`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`Let's try again, ${userName}!`);
       break;
+    }
+    if (i >= numberOfRounds) {
+      console.log(`Congratulations, ${userName}!`);
     }
   };
 };

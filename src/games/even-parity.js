@@ -10,9 +10,8 @@ const isNumberEven = (number) => {
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generateParams = () => {
-  const numForQuestion = Math.floor(Math.random() * 21);
-  const correctAnswer = isNumberEven(numForQuestion);
-  const question = numForQuestion;
+  const question = Math.floor(Math.random() * 21);
+  const correctAnswer = isNumberEven(question);
   return [question, correctAnswer];
 };
 

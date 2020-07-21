@@ -1,14 +1,14 @@
 import gameEngine from './../index.js';
 
 const generateNod = (num1, num2) => {
-  while (num1 != 0 && num2 != 0) {
+  while (num1 !== num2) {
     if (num1 > num2) {
-      num1 = num1 % num2;
+      num1 = num1 - num2;
     } else {
-      num2 = num2 % num1;
+      num2 = num2 - num1;
     }
   }
-  return num1 + num2;
+  return num1;
 };
 
 const gameTask = 'Find the greatest common divisor of given numbers.';

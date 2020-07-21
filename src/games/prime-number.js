@@ -2,22 +2,16 @@ import gameEngine from './../index.js';
 
 const isNumberPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
-    if (number % i === 0) {
-      return 'no';
-    }
+    if (number % i === 0) return false;
   }
-  if (number < 2) {
-    return 'no';
-  }
-  return 'yes';
+  return number > 1;
 };
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const generateParams = () => {
-  const numForQuestion = Math.floor(Math.random() * 21);
-  const correctAnswer = isNumberPrime(numForQuestion);
-  const question = numForQuestion;
+  const question = Math.floor(Math.random() * 21);
+  const correctAnswer = isNumberPrime(question) ? 'yes': 'no';
   return [question, correctAnswer];
 };
 
