@@ -11,7 +11,7 @@ const isNumberPrime = (number) => {
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const generateParams = () => {
-  const question = generateRandomNum(21);
+  const question = generateRandomNum(1, 21);
   const correctAnswer = isNumberPrime(question) ? 'yes': 'no';
   return [question, correctAnswer];
 };

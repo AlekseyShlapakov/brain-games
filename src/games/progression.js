@@ -40,9 +40,9 @@ const findElemOfProgression = (stepOfProgression, unknownElem, number) => {
 const gameTask = 'What number is missing in the progression?';
 
 const generateParams = () => {
-  const stepOfProgression = generateRandomNum(10);
-  const unknownElemOfProgression = generateRandomNum(10);
-  const numberOfProgression = generateRandomNum(101);
+  const stepOfProgression = generateRandomNum(1, 10);
+  const unknownElemOfProgression = generateRandomNum(1, 10);
+  const numberOfProgression = generateRandomNum(1, 101);
   const correctAnswer =
   findElemOfProgression(stepOfProgression, unknownElemOfProgression,
       numberOfProgression).toString();

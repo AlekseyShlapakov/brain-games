@@ -15,8 +15,8 @@ const generateNod = (num1, num2) => {
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const generateParams = () => {
-  const numForQuestionOne = generateRandomNum(21);
-  const numForQuestionTwo = generateRandomNum(21);
+  const numForQuestionOne = generateRandomNum(1, 21);
+  const numForQuestionTwo = generateRandomNum(1, 21);
   const correctAnswer =
   generateNod(numForQuestionOne, numForQuestionTwo).toString();
   const question = `${numForQuestionOne} ${numForQuestionTwo}`;

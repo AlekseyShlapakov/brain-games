@@ -2,8 +2,9 @@ import readlineSync from 'readline-sync';
 
 const numberOfRounds = 3;
 
-export const generateRandomNum = (count) => {
-  return Math.floor(Math.random() * count);
+export const generateRandomNum = (min, max) => {
+  const randomNum = min + Math.random() * (max + 1 - min);
+  return Math.floor(randomNum);
 };
 
 const gameEngine = (gameTask, generateParams) => {

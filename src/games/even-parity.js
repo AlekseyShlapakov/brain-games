@@ -12,7 +12,7 @@ const isNumberEven = (number) => {
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generateParams = () => {
-  const question = generateRandomNum(21);
+  const question = generateRandomNum(1, 21);
   const correctAnswer = isNumberEven(question);
   return [question, correctAnswer];
 };
