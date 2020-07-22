@@ -1,8 +1,8 @@
-# frontend-project-lvl1
+# Brain-Games
 
 # How to install?
 
-<code>npm i frontend-project-lvl1</code>
+<code>npm i brain-games-by-aash</code>
 <br>
 # How to play?
 
