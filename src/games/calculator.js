@@ -10,7 +10,7 @@ const generateCalculation = (metodOfCalc, num1, num2) => {
     case '*':
       return num1 * num2;
     default:
-      return false;
+      throw (new Error('Error. Invalid operation!'));
   }
 };
 
