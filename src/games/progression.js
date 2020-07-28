@@ -16,8 +16,8 @@ const generateParams = () => {
   const stepOfProgression = generateRandomNum(1, 10);
   const hiddenIndex = generateRandomNum(0, progressionLength);
   const firstElemOfProgression = generateRandomNum(1, 101);
-  const progression =
-  generateProgression(stepOfProgression, firstElemOfProgression, progressionLength);
+  const progression = generateProgression(stepOfProgression, firstElemOfProgression,
+    progressionLength);
   let hiddenElem = '..';
   [hiddenElem, progression[hiddenIndex]] = [progression[hiddenIndex], hiddenElem];
   const correctAnswer = hiddenElem.toString();
