@@ -22,7 +22,7 @@
 
 # Github Actions
 
-![CI](https://github.com/AlekseyShlapakov/frontend-project-lvl1/workflows/Node%20CI/badge.svg)<br><br>
+[![CI](https://github.com/AlekseyShlapakov/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/AlekseyShlapakov/frontend-project-lvl1/actions?query=workflow%3A%22Node+CI%22)<br><br>
 
 # "Is Even?" Game
 
