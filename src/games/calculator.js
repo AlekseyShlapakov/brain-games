@@ -1,4 +1,4 @@
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 import generateRandomNum from '../utils.js';
 
 const generateCalculation = (metodOfCalc, num1, num2) => {
@@ -28,6 +28,6 @@ const generateParams = () => {
   return [question, correctAnswer];
 };
 
-const calculateGame = () => gameEngine(gameTask, generateParams);
+const runCalculateGame = () => runGameEngine(gameTask, generateParams);
 
-export default calculateGame;
+export default runCalculateGame;

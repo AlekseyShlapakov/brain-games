@@ -1,7 +1,7 @@
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 import generateRandomNum from '../utils.js';
 
-const isEven = (number) => {
+const isNotEven = (number) => {
   if (number % 2 === 0) return false;
   return true;
 };
@@ -10,10 +10,10 @@ const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const generateParams = () => {
   const question = generateRandomNum(1, 21);
-  const correctAnswer = isEven(question) ? 'no' : 'yes';
+  const correctAnswer = isNotEven(question) ? 'no' : 'yes';
   return [question, correctAnswer];
 };
 
-const evenParityGame = () => gameEngine(gameTask, generateParams);
+const runEvenParityGame = () => runGameEngine(gameTask, generateParams);
 
-export default evenParityGame;
+export default runEvenParityGame;

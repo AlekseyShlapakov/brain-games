@@ -1,4 +1,4 @@
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 import generateRandomNum from '../utils.js';
 
 const isPrime = (number) => {
@@ -17,6 +17,6 @@ const generateParams = () => {
   return [question, correctAnswer];
 };
 
-const primeNumberGame = () => gameEngine(gameTask, generateParams);
+const runPrimeNumberGame = () => runGameEngine(gameTask, generateParams);
 
-export default primeNumberGame;
+export default runPrimeNumberGame;

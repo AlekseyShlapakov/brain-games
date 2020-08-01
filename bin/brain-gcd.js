@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import nodGame from '../src/games/nod.js';
+import runNodGame from '../src/games/nod.js';
 
-nodGame();
+runNodGame();

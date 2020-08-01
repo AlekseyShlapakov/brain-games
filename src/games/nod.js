@@ -1,9 +1,7 @@
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 import generateRandomNum from '../utils.js';
 
-const generateNod = (num1, num2) => {
-  return num2 ? generateNod(num2, num1 % num2) : num1;
-};
+const generateNod = (num1, num2) => (num2 ? generateNod(num2, num1 % num2) : num1);
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
@@ -15,6 +13,6 @@ const generateParams = () => {
   return [question, correctAnswer];
 };
 
-const nodGame = () => gameEngine(gameTask, generateParams);
+const runNodGame = () => runGameEngine(gameTask, generateParams);
 
-export default nodGame;
+export default runNodGame;
