@@ -13,6 +13,6 @@ const generateQuestionAndAnswer = () => {
   return [question, correctAnswer];
 };
 
-const runNodGame = () => runGameEngine(gameTask, generateQuestionAndAnswer);
+const runGcdGame = () => runGameEngine(gameTask, generateQuestionAndAnswer);
 
-export default runNodGame;
+export default runGcdGame;
