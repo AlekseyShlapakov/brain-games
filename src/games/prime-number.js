@@ -3,7 +3,7 @@ import generateRandomNum from '../utils.js';
 
 const isPrime = (number) => {
   if (number <= 1) return false;
-  for (let i = 2; i < number; i += 1) {
+  for (let i = 2; i < number / 2; i += 1) {
     if (number % i === 0) return false;
   }
   return true;
@@ -11,12 +11,12 @@ const isPrime = (number) => {
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
-const generateParams = () => {
+const generateQuestionAndAnswer = () => {
   const question = generateRandomNum(1, 21);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
-const runPrimeNumberGame = () => runGameEngine(gameTask, generateParams);
+const runPrimeNumberGame = () => runGameEngine(gameTask, generateQuestionAndAnswer);
 
 export default runPrimeNumberGame;

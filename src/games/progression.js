@@ -11,7 +11,7 @@ const generateProgression = (stepOfProgression, firstElem, progressionLength) =>
 
 const gameTask = 'What number is missing in the progression?';
 
-const generateParams = () => {
+const generateQuestionAndAnswer = () => {
   const progressionLength = 10;
   const stepOfProgression = generateRandomNum(1, 10);
   const hiddenIndex = generateRandomNum(0, progressionLength - 1);
@@ -24,6 +24,6 @@ const generateParams = () => {
   return [question, correctAnswer];
 };
 
-const runProgressionGame = () => runGameEngine(gameTask, generateParams);
+const runProgressionGame = () => runGameEngine(gameTask, generateQuestionAndAnswer);
 
 export default runProgressionGame;
